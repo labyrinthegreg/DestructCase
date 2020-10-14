@@ -68,6 +68,9 @@ public class Main {
                     // Déplacement vers le haut
 
                     abscisseJ1--;
+                    if (abscisseJ1 == abscisseJ2){
+                        System.out.println("Vous ne pouvez pas vous faier du rentre-dedans comme ça");
+                    }
                     break;
                 }
                 else if (ouVeuxTuTeDeplacer == 'q' && ordonneJ1>0){
@@ -95,18 +98,18 @@ public class Main {
             }
 
             FonctionDestructCase.remplirCaseDepart(plateau, ordonneJ1, abscisseJ1, ordonneJ2, abscisseJ2);
-            FonctionDestructCase.afficherMenuEnPartie();
 
             //Demande de la case à détruire
             System.out.println("Choisissez la case que vous voulez détruire. (Elles sont numérotés)");
             while (true){ // Vérification que c'est bien un nombre et entre 1 et 110
-                if (scan.hasNextInt()){
-                    place = scan.nextInt();
+                Scanner scanDetruire1 = new Scanner(System.in);
+                if (scanDetruire1.hasNextInt()){
+                    place = scanDetruire1.nextInt();
                     while (true){
 
                         if (place<1 || place>110){
                             System.out.println("Vous voyez que c'est entre 1 et 110");
-                            place = scan.nextInt();
+                            place = scanDetruire1.nextInt();
                         }
                         else {
                             break;
@@ -115,13 +118,13 @@ public class Main {
                     break;
                 }
                 else {
-                    System.out.println("Vous voyez les numéros que vous pouvez taper ");
-                    place = scan.nextInt();
+                    System.out.println("Vous ne voyez que les numéros que vous pouvez taper ");
                 }
             }
+
             FonctionDestructCase.detruireCase(plateau, place);
-            FonctionDestructCase.remplirCaseDepart(plateau, ordonneJ1, abscisseJ1, ordonneJ2, abscisseJ2);
             FonctionDestructCase.afficherMenuEnPartie();
+            FonctionDestructCase.remplirCaseDepart(plateau, ordonneJ1, abscisseJ1, ordonneJ2, abscisseJ2);
 
             Scanner scan2 = new Scanner(System.in);
             System.out.println("C'est à " + joueur2);
@@ -168,24 +171,26 @@ public class Main {
             }
 
             FonctionDestructCase.remplirCaseDepart(plateau, ordonneJ1, abscisseJ1, ordonneJ2, abscisseJ2);
-            FonctionDestructCase.afficherMenuEnPartie();
 
 
             System.out.println("Choisissez la case que vous voulez détruire. (Elles sont numérotés)");
 
+
             while (true){ // Vérification que c'est bien un nombre et entre 1 et 110
-                if (scan2.hasNextInt()){
-                    place2 = scan2.nextInt();
+                Scanner scanDetruire2 = new Scanner(System.in);
+                if (scanDetruire2.hasNextInt()){
+                    place = scanDetruire2.nextInt();
                     if (place<1 || place>110){
                         System.out.println("Vous voyez que c'est entre 1 et 110");
                     }
                     break;
                 }
                 else {
-                    System.out.println("Vous voyez les numéros que vous pouvez taper ");
+                    System.out.println("Vous ne voyez que les numéros que vous pouvez taper ");
                 }
             }
-            FonctionDestructCase.detruireCase(plateau, place2);
+            FonctionDestructCase.detruireCase(plateau, place);
+            FonctionDestructCase.remplirCaseDepart(plateau, ordonneJ1, abscisseJ1, ordonneJ2, abscisseJ2);
         }
 
 
