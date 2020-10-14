@@ -5,16 +5,22 @@ import java.util.*;
 public class FonctionDestructCase {
 
     public static void afficherRègles(){
+        // Initialisation de la variable regle
         String regles = "Règles du jeu : \n\n"+"Pendant son tour un joueur peut déplacer son pion d’une case (verticalement ou horizontalement), ensuite à la fin de son tour il devra détruire une case du plateau.\n" +
-                "Une fois la case détruite plus aucun joueur ne pourras se déplacer dessus\n"+
-                "Le but du jeu est d'enfermer ses adversaires pour les empécher de se déplacer\n"+
+                "Une fois la case détruite plus aucun joueur ne pourra se déplacer dessus\n"+
+                "Le but du jeu est d'enfermer ses adversaires pour les empêcher de se déplacer\n"+
                 "Le dernier joueur pouvant encore se déplacer gagne.\n" +
                 "Attention :\n" +
                 "- Un joueur ne peut pas détruire une case qui est actuellement occupée par un autre joueur.\n" +
                 "- Un joueur ne peut pas occuper une case détruite ou une case déjà occupée par un autre joueur.\n- Un joueur bloqué pendant un tour est déclaré perdant.";
 
+        // Affichage des règles
         System.out.println(regles);
+        // Réaffiche le menu
+        afficherMenu();
     }
+
+
 
     public static void afficherMenu() {
         // Présentation du menu
@@ -48,6 +54,7 @@ public class FonctionDestructCase {
                     break;
                 }
                 else if (retourMenu == 3){ //Quitter le jeu
+                    System.out.println("Au revoir");
                     System.exit(1);
                 }
             }
@@ -61,9 +68,11 @@ public class FonctionDestructCase {
 
     }
 
+
+
     public static String demandePseudo1(){
         // Affichage de la demande de pseudo
-        System.out.println("tu es le premier joueur. Donne-moi le pseudo de ton joueur(pas que des nombres)");
+        System.out.println("Tu es le premier joueur. Donne-moi le pseudo de ton joueur(pas que des nombres)");
         String pseudoJ1;
         while (true){ // Vérification si il est approprié
             Scanner pseudoScan = new Scanner(System.in);
@@ -77,9 +86,10 @@ public class FonctionDestructCase {
         }
         return (pseudoJ1);
     }
+
     public static String demandePseudo2(){
         // Affichage de la demande de pseudo
-        System.out.println("tu es le second joueur. Donne-moi le pseudo de ton joueur(pas que des nombres)");
+        System.out.println("Tu es le second joueur. Donne-moi le pseudo de ton joueur(pas que des nombres)");
         String pseudoJ2;
         while (true){ // Vérification si il est approprié
             Scanner pseudoScan = new Scanner(System.in);
@@ -94,8 +104,10 @@ public class FonctionDestructCase {
         return (pseudoJ2);
     }
 
+
+
     public static String aleaPremierjoueur(String pseudoJ1, String pseudoJ2){
-        // Création d'une liste avce les pseudos des joueurs
+        // Création d'une liste avec les pseudos des joueurs
         List<String> joueurs = Arrays.asList(pseudoJ1, pseudoJ2);
         Random rand = new Random();
         int tailleListe = rand.nextInt(joueurs.size());// Choix index aléatoire dans la liste
