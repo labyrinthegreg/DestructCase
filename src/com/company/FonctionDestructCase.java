@@ -1,6 +1,6 @@
 package com.company;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class FonctionDestructCase {
 
@@ -92,6 +92,15 @@ public class FonctionDestructCase {
             }
         }
         return (pseudoJ2);
+    }
+
+    public static String aleaPremierjoueur(String pseudoJ1, String pseudoJ2){
+        // Création d'une liste avce les pseudos des joueurs
+        List<String> joueurs = Arrays.asList(pseudoJ1, pseudoJ2);
+        Random rand = new Random();
+        int tailleListe = rand.nextInt(joueurs.size());// Choix index aléatoire dans la liste
+        String Joueur1 = joueurs.get(tailleListe);// Récupération de la valeur de la index pris
+        return Joueur1;
     }
 }
 
