@@ -40,13 +40,11 @@ public class FonctionDestructCase {
             Scanner scan1 = new Scanner(System.in);
             if (retourMenu >=1 && retourMenu <=3){
                 if (retourMenu == 1){ //Afficher les règles
-                    System.out.println("Voilà les règles du jeu");
                     afficherRègles();
                     break;
                 }
                 else if (retourMenu == 2){ //Commencer la partie
                     System.out.println("Tu peux jouer");
-                    demandePseudos();
                     break;
                 }
                 else if (retourMenu == 3){ //Quitter le jeu
@@ -63,7 +61,7 @@ public class FonctionDestructCase {
 
     }
 
-    public static void demandePseudos(){
+    public static String demandePseudo1(){
         // Affichage de la demande de pseudo
         System.out.println("tu es le premier joueur. Donne-moi le pseudo de ton joueur(pas que des nombres)");
         String pseudoJ1;
@@ -77,9 +75,13 @@ public class FonctionDestructCase {
                 break;
             }
         }
-        System.out.println("Tu es le second joueur. Donne-moi le pseudo de ton joueur(pas que des nombres)");
+        return (pseudoJ1);
+    }
+    public static String demandePseudo2(){
+        // Affichage de la demande de pseudo
+        System.out.println("tu es le second joueur. Donne-moi le pseudo de ton joueur(pas que des nombres)");
         String pseudoJ2;
-        while (true){
+        while (true){ // Vérification si il est approprié
             Scanner pseudoScan = new Scanner(System.in);
             if (pseudoScan.hasNextInt()){
                 System.out.println("Fais-moi quelquechose de cohérent s'il te plaît");
@@ -89,9 +91,8 @@ public class FonctionDestructCase {
                 break;
             }
         }
-
+        return (pseudoJ2);
     }
-
 }
 
 
