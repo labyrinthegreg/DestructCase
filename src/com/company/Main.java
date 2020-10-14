@@ -11,6 +11,8 @@ public class Main {
         String pseudoJ2;
         String joueur1;
         String joueur2;
+        int place;
+        int place2;
 
         // Création du plateau
         // Déclaration des variables
@@ -26,7 +28,7 @@ public class Main {
         pseudoJ2 = FonctionDestructCase.demandePseudo2();
         System.out.println("Joueur2: " + pseudoJ2);
 
-        FonctionDestructCase.afficherPlateau(abscisse, ordonnée);
+        FonctionDestructCase.remplirCaseDepart(plateau);
 
         // choix du premier joueur aléatoirement
         joueur1 = FonctionDestructCase.aleaPremierjoueur(pseudoJ1, pseudoJ2);
@@ -43,22 +45,39 @@ public class Main {
         while(true){
             Scanner scan = new Scanner(System.in);
             System.out.println("C'est à " + joueur1);
-            System.out.println("Choisis ta case.");
-            int place = scan.nextInt();
-
-            //FonctionDestructCase.deplacement(plateau, place, "joueur1");
-
+            //Le joueur1 bouge
+            //Demande de la case à détruire
+            System.out.println("Choisis la case que tu veux détruire. (Elles sont numérotés");
+            while (true){ // Vérification que c'est bien un nombre et entre 1 et 110
+                if (scan.hasNextInt()){
+                    place = scan.nextInt();
+                    if (place<1 || place>110){
+                        System.out.println("Tu vois que c'est entre 1 et 110");
+                    }
+                    break;
+                }
+                else {
+                    System.out.println("Tu vois les numéros que tu peux taper ");
+                }
+            }
+            FonctionDestructCase.detruireCase(plateau, place);
 
             Scanner scan2 = new Scanner(System.in);
             System.out.println("C'est à " + joueur2);
-            System.out.println("Choisis ta case.");
-            int place2 = scan2.nextInt();
-            //FonctionDestructCase.deplacement(plateau, place2, "joueur2");
-
-            FonctionDestructCase.afficherPlateau(abscisse, ordonnée);
-
-
-
+            //Le joueur2 bouge
+            while (true){ // Vérification que c'est bien un nombre et entre 1 et 110
+                if (scan2.hasNextInt()){
+                    place2 = scan2.nextInt();
+                    if (place<1 || place>110){
+                        System.out.println("Tu vois que c'est entre 1 et 110");
+                    }
+                    break;
+                }
+                else {
+                    System.out.println("Tu vois les numéros que tu peux taper ");
+                }
+            }
+            FonctionDestructCase.detruireCase(plateau, place2);
         }
 
 

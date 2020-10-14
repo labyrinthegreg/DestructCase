@@ -117,17 +117,28 @@ public class FonctionDestructCase {
         }
     }
 
-    public static void remplirCaseDepart(String[][] plateau) {
-        // Placement des joueurs A et B dans le centre du plateau
+    public static void remplirCaseDepart(String[][] plateau){
+        int numéroCase = 0;
         for(int abcisse=0;abcisse<10;abcisse++) {
+            System.out.println();
+            System.out.print(" | ");
             for(int ordonne=0;ordonne<11;ordonne++) {
-                plateau[abcisse][ordonne] = " ";
+                numéroCase++;
+                plateau[abcisse][ordonne] = String.valueOf(numéroCase);
                 // La position précise des joueurs A et B
-                plateau[4][6] = "A";
-                plateau[5][6] = "B";
-                System.out.print(plateau[abcisse][ordonne]+" | ");
+                plateau[4][5] = "A";
+                plateau[5][5] = "B";
+                System.out.print(plateau[abcisse][ordonne] + " | ");
             }
-            System.out.println(" | ");
+            System.out.println();
+        }
+    }
+
+    static public void detruireCase(String[][] plateau, int place){
+        String croix = " X ";
+
+        switch (place){
+
         }
     }
 }
