@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.management.MBeanRegistration;
 import java.util.Scanner;
 
 public class Main {
@@ -33,8 +34,6 @@ public class Main {
         pseudoJ2 = FonctionDestructCase.demandePseudo2();
         System.out.println("Joueur2: " + pseudoJ2);
 
-        FonctionDestructCase.remplirCaseDepart(plateau, ordonneJ1, abscisseJ1, ordonneJ2, abscisseJ2);
-
         // choix du premier joueur aléatoirement
         joueur1 = FonctionDestructCase.aleaPremierjoueur(pseudoJ1, pseudoJ2);
         joueur2 = pseudoJ2;
@@ -64,27 +63,40 @@ public class Main {
                     break;
                 }
             }
-            if (ouVeuxTuTeDeplacer == 'z'){
-                // Déplacement vers le haut
+            while (true){
+                if (ouVeuxTuTeDeplacer == 'z' && abscisseJ1>0){
+                    // Déplacement vers le haut
 
-                abscisseJ1--;
-            }
-            else if (ouVeuxTuTeDeplacer == 'q'){
-                // Déplacement vers la gauche
+                    abscisseJ1--;
+                    break;
+                }
+                else if (ouVeuxTuTeDeplacer == 'q' && ordonneJ1>0){
+                    // Déplacement vers la gauche
 
-                ordonneJ1++;
-            }
-            else if (ouVeuxTuTeDeplacer == 's'){
-                // Déplacement vers le bas
+                    ordonneJ1--;
+                    break;
+                }
+                else if (ouVeuxTuTeDeplacer == 's'&& abscisseJ1<10){
+                    // Déplacement vers le bas
 
-                abscisseJ1++;
-            }
-            else if (ouVeuxTuTeDeplacer == 'd'){
-                // Déplacement vers la droite
+                    abscisseJ1++;
+                    break;
+                }
+                else if (ouVeuxTuTeDeplacer == 'd' && ordonneJ1<11){
+                    // Déplacement vers la droite
 
-                ordonneJ1--;
+                    ordonneJ1++;
+                    break;
+                }
+                else {
+                    System.out.println("Vous ne pouvez pas sortir des limites");
+                    ouVeuxTuTeDeplacer = scan.next().charAt(0);
+                }
             }
+
             FonctionDestructCase.remplirCaseDepart(plateau, ordonneJ1, abscisseJ1, ordonneJ2, abscisseJ2);
+            FonctionDestructCase.afficherMenuEnPartie();
+
             //Demande de la case à détruire
             System.out.println("Choisissez la case que vous voulez détruire. (Elles sont numérotés)");
             while (true){ // Vérification que c'est bien un nombre et entre 1 et 110
@@ -104,9 +116,12 @@ public class Main {
                 }
                 else {
                     System.out.println("Vous voyez les numéros que vous pouvez taper ");
+                    place = scan.nextInt();
                 }
             }
             FonctionDestructCase.detruireCase(plateau, place);
+            FonctionDestructCase.remplirCaseDepart(plateau, ordonneJ1, abscisseJ1, ordonneJ2, abscisseJ2);
+            FonctionDestructCase.afficherMenuEnPartie();
 
             Scanner scan2 = new Scanner(System.in);
             System.out.println("C'est à " + joueur2);
@@ -121,29 +136,43 @@ public class Main {
                     break;
                 }
             }
-            if (ouVeuxTuTeDeplacer == 'z'){
-                // Déplacement vers le haut
+            while (true){
+                if (ouVeuxTuTeDeplacer == 'z' && abscisseJ2>0){
+                    // Déplacement vers le haut
 
-                abscisseJ2--;
-            }
-            else if (ouVeuxTuTeDeplacer == 'q'){
-                // Déplacement vers la gauche
+                    abscisseJ2--;
+                    break;
+                }
+                else if (ouVeuxTuTeDeplacer == 'q' && ordonneJ2>0){
+                    // Déplacement vers la gauche
 
-                ordonneJ2++;
-            }
-            else if (ouVeuxTuTeDeplacer == 's'){
-                // Déplacement vers le bas
+                    ordonneJ2--;
+                    break;
+                }
+                else if (ouVeuxTuTeDeplacer == 's' && abscisseJ2<10){
+                    // Déplacement vers le bas
 
-                abscisseJ2++;
-            }
-            else if (ouVeuxTuTeDeplacer == 'd'){
-                // Déplacement vers la droite
+                    abscisseJ2++;
+                    break;
+                }
+                else if (ouVeuxTuTeDeplacer == 'd' && ordonneJ2<11){
+                    // Déplacement vers la droite
 
-                ordonneJ2--;
+                    ordonneJ2++;
+                    break;
+                }
+                else {
+                    System.out.println("Vous ne pouvez pas sortir des limites");
+                    ouVeuxTuTeDeplacer = scan.next().charAt(0);
+                }
             }
+
+            FonctionDestructCase.remplirCaseDepart(plateau, ordonneJ1, abscisseJ1, ordonneJ2, abscisseJ2);
+            FonctionDestructCase.afficherMenuEnPartie();
+
+
             System.out.println("Choisissez la case que vous voulez détruire. (Elles sont numérotés)");
 
-            //Le joueur2 bouge
             while (true){ // Vérification que c'est bien un nombre et entre 1 et 110
                 if (scan2.hasNextInt()){
                     place2 = scan2.nextInt();
