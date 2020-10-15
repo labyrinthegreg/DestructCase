@@ -317,7 +317,7 @@ public class FonctionDestructCase {
                 numéroCase++;
                 VariablesGlobales.plateau[abcisse][ordonne] = String.valueOf(numéroCase);
                 if (placeX.contains(numéroCase)){
-                    VariablesGlobales.plateau[abcisse][ordonne]= "⛔" ;
+                    VariablesGlobales.plateau[abcisse][ordonne]= "❎" ;
                 }
                 VariablesGlobales.plateau[VariablesGlobales.abscisseJ1][VariablesGlobales.ordonneJ1] = VariablesGlobales.symboleJoueur1;
                 VariablesGlobales.plateau[VariablesGlobales.abscisseJ2][VariablesGlobales.ordonneJ2] = VariablesGlobales.symboleJoueur2;
