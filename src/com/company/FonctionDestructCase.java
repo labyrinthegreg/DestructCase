@@ -24,8 +24,11 @@ public class FonctionDestructCase {
     public static ArrayList<Integer> placeX = new ArrayList<Integer>();
     public static int croix;
 
-
+    /**
+     * Fonction pour afficher les règles du jeu depuis le menu
+     */
     public static void afficherRegles() {
+
         // Initialisation de la variable regle
         String regles = "Règles du jeu : \n\n" + "Pendant son tour un joueur peut déplacer son pion d’une case (verticalement ou horizontalement), ensuite à la fin de son tour il devra détruire une case du plateau.\n" +
                 "Une fois la case détruite plus aucun joueur ne pourra se déplacer dessus\n" +
@@ -41,8 +44,11 @@ public class FonctionDestructCase {
         afficherMenu();
     }
 
-
+    /**
+     * Fonction pour afficher le menu du jeu lorsqu'on le lance
+     */
     public static void afficherMenu() {
+
         // Présentation du menu
         System.out.println("Si tu veux connaître les règles, tape '1'");
         System.out.println("Pour commencer une partie, tape '2'");
@@ -81,10 +87,12 @@ public class FonctionDestructCase {
 
         }
 
-
     }
 
-
+    /**
+     * Fonction qui demande son pseudo au joueur1
+     * @return enregistre le pseudo1 et l'attribue au joueur1
+     */
     public static String demandePseudo1() {
         // Affichage de la demande de pseudo
         System.out.println("Tu es le premier joueur. Donne-moi le pseudo de ton joueur(pas que des nombres)");
@@ -100,6 +108,10 @@ public class FonctionDestructCase {
         return (VariablesGlobales.pseudoJ1);
     }
 
+    /**
+     * Fonction qui demande son pseudo au joueur2
+     * @return enregistre le pseudo 2 et l'attribue au joueur2
+     */
     public static String demandePseudo2() {
         // Affichage de la demande de pseudo
         System.out.println("Tu es le second joueur. Donne-moi le pseudo de ton joueur(pas que des nombres)");
@@ -115,7 +127,10 @@ public class FonctionDestructCase {
         return (VariablesGlobales.pseudoJ2);
     }
 
-
+    /**
+     * Fonction qui choisit aléatoirement qui jouera en premier entre le joueur1 et le joueur2
+     * @return le joueur qui jouera en premier
+     */
     public static String aleaPremierjoueur() {
         // Création d'une liste avec les pseudos des joueurs
         List<String> joueurs = Arrays.asList(VariablesGlobales.pseudoJ1, VariablesGlobales.pseudoJ2);
@@ -125,6 +140,9 @@ public class FonctionDestructCase {
         return joueur1;
     }
 
+    /**
+     * Fonction qui gère les déplacements du joueur1
+     */
     public static void deplacerJoueur1(){
         Scanner scan = new Scanner(System.in);
         System.out.println("C'est à " + VariablesGlobales.joueur1);
@@ -132,7 +150,7 @@ public class FonctionDestructCase {
         System.out.println(" Ou voulez-vous vous déplacez ? (z q s d)");
         Scanner scanDeplacement = new Scanner(System.in);
         FonctionDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer = scanDeplacement.next().charAt(0);
-        // Vérification de ce qui est écrit*/
+        // Vérification de ce qui est écrit
         while (true) {
             if (FonctionDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer != 'z' && FonctionDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer != 'q' && FonctionDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer != 'd' && FonctionDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer != 's') {
                 System.out.println("T'as que 4 choix");
@@ -208,6 +226,9 @@ public class FonctionDestructCase {
         }
     }
 
+    /**
+     * Fonction qui gère les déplacements du joueur2
+     */
     public static void deplacerJoueur2(){
         Scanner scanDeplacement2 = new Scanner(System.in);
         System.out.println("C'est à " + FonctionDestructCase.VariablesGlobales.joueur2);
@@ -283,6 +304,9 @@ public class FonctionDestructCase {
         }
     }
 
+    /**
+     * Fonction qui sert à afficher et remplir le plateau de jeu
+     */
     public static void remplirCaseDepart(){
         int numéroCase = 0;
         for(int abcisse=0;abcisse<10;abcisse++) {
@@ -304,6 +328,9 @@ public class FonctionDestructCase {
         return;
     }
 
+    /**
+     * Fonction qui sert à afficher le menu au cours de la partie au cas ou un joueur voudrait relir les règles du jeu ou abandonner
+     */
     public static void afficherMenuEnPartie() {
         // Présentation du menu
         System.out.println("Si tu veux connaître les règles, tape '1'");
@@ -345,6 +372,11 @@ public class FonctionDestructCase {
         }
     }
 
+    /**
+     * Fonction qui sert à détruire la case voulue a la fin du tour du joueur
+     * @param plateau
+     * @param place
+     */
     static public void detruireCase(String[][] plateau, int place){
         String croix = " X ";
         placeX.add(place);
