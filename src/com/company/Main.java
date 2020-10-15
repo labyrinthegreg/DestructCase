@@ -190,6 +190,7 @@ public class Main {
                 }
             }
             FonctionDestructCase.detruireCase(plateau, place);
+            FonctionDestructCase.afficherMenuEnPartie();
             FonctionDestructCase.remplirCaseDepart(plateau, ordonneJ1, abscisseJ1, ordonneJ2, abscisseJ2);
         }
 

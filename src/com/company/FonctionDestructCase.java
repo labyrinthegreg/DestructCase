@@ -118,19 +118,19 @@ public class FonctionDestructCase {
                 // Numéro pour chaque case
                 numéroCase++;
                 plateau[abcisse][ordonne] = String.valueOf(numéroCase);
+                if (placeX.contains(numéroCase)){
+                    plateau[abcisse][ordonne]= " X ";
+                }
+
                 // La position précise des joueurs A et B
                 plateau[abcisseJ1][ordonneJ1] = "A";
                 plateau[abcisseJ2][ordonneJ2] = "B";
+
                 System.out.print(plateau[abcisse][ordonne] + " | ");
             }
             System.out.println();
         }
         return;
-    }
-
-    static public void detruireCase(String[][] plateau, int place){
-        String croix = " X ";
-        placeX.add(place);
     }
 
     public static void afficherMenuEnPartie() {
@@ -172,5 +172,20 @@ public class FonctionDestructCase {
             }
 
         }
+    }
+
+    static public void detruireCase(String[][] plateau, int place){
+        String croix = " X ";
+        placeX.add(place);
+
+        switch (place){
+            case 1:
+                plateau [0][0] = croix;
+                break;
+            case 58 :
+                plateau [6][3] = croix;
+                break;
+        }
+
     }
 }
