@@ -17,9 +17,10 @@ public class FonctionsDestructCase {
         public static int abscisseJ2 = 5;
         public static String symboleJoueur1 = "🅰️";
         public static String symboleJoueur2 = "🅱️";
-        public static String symboleCaseDetruite = "⛔";
+        public static String symboleCaseDetruite = "❎" ;
         public static char ouVeuxTuTeDeplacer;
-        public static String croix = "⛔";
+        public static String croix = "❎";
+        public static boolean perdant = false;
     }
 
     public static ArrayList<Integer> placeX = new ArrayList<Integer>();
@@ -164,8 +165,9 @@ public class FonctionsDestructCase {
                     System.out.println("Il n'y as plus de case ici");
                     FonctionsDestructCase.VariablesGlobales.abscisseJ1++;
                     FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer = scanDeplacement.next().charAt(0);
-                } else if (FonctionsDestructCase.VariablesGlobales.plateau[FonctionsDestructCase.VariablesGlobales.abscisseJ1][FonctionsDestructCase.VariablesGlobales.ordonneJ1].equals("🅰️")){
-                    System.out.println("Cette case à été détruite");
+                }
+                else if (VariablesGlobales.plateau[VariablesGlobales.abscisseJ1][VariablesGlobales.ordonneJ1].equals(VariablesGlobales.croix)){
+                    System.out.println("Cette case est détruite tu ne peux pas y aller");
                     FonctionsDestructCase.VariablesGlobales.abscisseJ1++;
                     FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer = scanDeplacement.next().charAt(0);
                 }
@@ -173,7 +175,7 @@ public class FonctionsDestructCase {
                     break;
                 }
 
-            } else if (FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer == 'q' && FonctionsDestructCase.VariablesGlobales.ordonneJ1 > 0) {
+                } else if (FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer == 'q' && FonctionsDestructCase.VariablesGlobales.ordonneJ1 > 0) {
                 // Déplacement vers la gauche
                 FonctionsDestructCase.VariablesGlobales.ordonneJ1--;
                 if (FonctionsDestructCase.VariablesGlobales.ordonneJ1 == FonctionsDestructCase.VariablesGlobales.ordonneJ2 && FonctionsDestructCase.VariablesGlobales.abscisseJ1 == FonctionsDestructCase.VariablesGlobales.abscisseJ2) {
@@ -184,7 +186,13 @@ public class FonctionsDestructCase {
                     System.out.println("Il n'y as plus de case ici");
                     FonctionsDestructCase.VariablesGlobales.ordonneJ1++;
                     FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer = scanDeplacement.next().charAt(0);
-                } else {
+                }
+                else if (VariablesGlobales.plateau[VariablesGlobales.abscisseJ1][VariablesGlobales.ordonneJ1].equals(VariablesGlobales.croix)) {
+                    System.out.println("Cette case est détruite tu ne peux pas y aller");
+                    VariablesGlobales.ordonneJ1++;
+                    FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer = scanDeplacement.next().charAt(0);
+                }
+                else {
                     break;
                 }
             } else if (FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer == 's' && FonctionsDestructCase.VariablesGlobales.abscisseJ1 < 10) {
@@ -198,7 +206,13 @@ public class FonctionsDestructCase {
                     System.out.println("Il n'y as plus de case ici");
                     FonctionsDestructCase.VariablesGlobales.abscisseJ1--;
                     FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer = scanDeplacement.next().charAt(0);
-                } else {
+                }
+                else if (VariablesGlobales.plateau[VariablesGlobales.abscisseJ1][VariablesGlobales.ordonneJ1].equals(VariablesGlobales.croix)) {
+                    System.out.println("Cette case est détruite tu ne peux pas y aller");
+                    FonctionsDestructCase.VariablesGlobales.abscisseJ1--;
+                    FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer = scanDeplacement.next().charAt(0);
+                }
+                    else {
                     break;
                 }
 
@@ -213,7 +227,13 @@ public class FonctionsDestructCase {
                     System.out.println("Il n'y as plus de case ici");
                     FonctionsDestructCase.VariablesGlobales.ordonneJ1--;
                     FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer = scanDeplacement.next().charAt(0);
-                } else {
+                }
+                else if (VariablesGlobales.plateau[VariablesGlobales.abscisseJ1][VariablesGlobales.ordonneJ1].equals(VariablesGlobales.croix)) {
+                    System.out.println("Cette case est détruite tu ne peux pas y aller");
+                    VariablesGlobales.ordonneJ1--;
+                    FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer = scanDeplacement.next().charAt(0);
+                }
+                else {
                     break;
                 }
             } else {
@@ -246,7 +266,13 @@ public class FonctionsDestructCase {
                     System.out.println("Vous ne pouvez pas vous faire du rentre-dedans comme ça");
                     FonctionsDestructCase.VariablesGlobales.abscisseJ2++;
                     FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer = scanDeplacement2.next().charAt(0);
-                } else {
+                }
+                else if (VariablesGlobales.plateau[VariablesGlobales.abscisseJ2][VariablesGlobales.ordonneJ2].equals(VariablesGlobales.croix)) {
+                    System.out.println("Cette case est détruite tu ne peux pas y aller");
+                    VariablesGlobales.abscisseJ2++;
+                    FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer = scanDeplacement2.next().charAt(0);
+                }
+                else {
                     break;
                 }
             } else if (FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer == 'q' && FonctionsDestructCase.VariablesGlobales.ordonneJ2 > 0) {
@@ -260,7 +286,13 @@ public class FonctionsDestructCase {
                     System.out.println("Il n'y as plus de case ici");
                     FonctionsDestructCase.VariablesGlobales.ordonneJ2++;
                     FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer = scanDeplacement2.next().charAt(0);
-                } else {
+                }
+                else if (VariablesGlobales.plateau[VariablesGlobales.abscisseJ2][VariablesGlobales.ordonneJ2].equals(VariablesGlobales.croix)) {
+                    System.out.println("Cette case est détruite tu ne peux pas y aller");
+                    VariablesGlobales.ordonneJ2++;
+                    FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer = scanDeplacement2.next().charAt(0);
+                }
+                else {
                     break;
                 }
             } else if (FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer == 's' && FonctionsDestructCase.VariablesGlobales.abscisseJ2 < 10) {
@@ -274,7 +306,13 @@ public class FonctionsDestructCase {
                     System.out.println("Il n'y as plus de case ici");
                     FonctionsDestructCase.VariablesGlobales.abscisseJ2--;
                     FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer = scanDeplacement2.next().charAt(0);
-                } else {
+                }
+                else if (VariablesGlobales.plateau[VariablesGlobales.abscisseJ2][VariablesGlobales.ordonneJ2].equals(VariablesGlobales.croix)) {
+                    System.out.println("Cette case est détruite tu ne peux pas y aller");
+                    VariablesGlobales.abscisseJ2--;
+                    FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer = scanDeplacement2.next().charAt(0);
+                }
+                else {
                     break;
                 }
             } else if (FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer == 'd' && FonctionsDestructCase.VariablesGlobales.ordonneJ2 < 11) {
@@ -288,7 +326,12 @@ public class FonctionsDestructCase {
                     System.out.println("Il n'y as plus de case ici");
                     FonctionsDestructCase.VariablesGlobales.ordonneJ2--;
                     FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer = scanDeplacement2.next().charAt(0);
-                } else {
+                }
+                else if (VariablesGlobales.plateau[VariablesGlobales.abscisseJ2][VariablesGlobales.ordonneJ2].equals(VariablesGlobales.croix)) {
+                    System.out.println("Cette case est détruite tu ne peux pas y aller");
+                    VariablesGlobales.ordonneJ2++;
+                    FonctionsDestructCase.VariablesGlobales.ouVeuxTuTeDeplacer = scanDeplacement2.next().charAt(0);
+                }else {
                     break;
                 }
             } else {
@@ -699,5 +742,6 @@ public class FonctionsDestructCase {
         }
 
     }
+
 
 }

@@ -84,8 +84,13 @@ public class Main {
                     if (place < 1 || place > 110) {
                         System.out.println("Vous voyez que c'est entre 1 et 110");
                     }
+                    else if (FonctionsDestructCase.placeX.contains(place)) {
+                        System.out.println("Cette case à déjà été détruite");
+                        place = scanDetruire2.nextInt();
+                    }
                     break;
-                } else {
+                }
+                else {
                     System.out.println("Vous ne voyez que les numéros que vous pouvez taper ");
                 }
             }
