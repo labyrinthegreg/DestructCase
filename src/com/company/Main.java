@@ -15,6 +15,8 @@ public class Main {
         char ouVeuxTuTeDeplacer;
         int place;
         int place2;
+        int placeJ1;
+        int placeJ2;
         int ordonneJ1 = 5;
         int abscisseJ1 = 4;
         int ordonneJ2 = 5;
@@ -66,30 +68,53 @@ public class Main {
             while (true){
                 if (ouVeuxTuTeDeplacer == 'z' && abscisseJ1>0){
                     // Déplacement vers le haut
-
                     abscisseJ1--;
-                    if (abscisseJ1 == abscisseJ2){
-                        System.out.println("Vous ne pouvez pas vous faier du rentre-dedans comme ça");
+                    if (abscisseJ1 == abscisseJ2 && ordonneJ1 == ordonneJ2){
+                        System.out.println("Vous ne pouvez pas vous faire du rentre-dedans comme ça");
+                        abscisseJ1++;
+                        ouVeuxTuTeDeplacer = scanDeplacement.next().charAt(0);
                     }
-                    break;
+                    else {
+                        break;
+                    }
+
                 }
                 else if (ouVeuxTuTeDeplacer == 'q' && ordonneJ1>0){
                     // Déplacement vers la gauche
-
                     ordonneJ1--;
+                    if (ordonneJ1 == ordonneJ2 && abscisseJ1 == abscisseJ2){
+                    System.out.println("Vous ne pouvez pas vous faire du rentre-dedans comme ça");
+                    ordonneJ1++;
+                    ouVeuxTuTeDeplacer = scanDeplacement.next().charAt(0);
+                }
+                else {
                     break;
+                }
                 }
                 else if (ouVeuxTuTeDeplacer == 's'&& abscisseJ1<10){
                     // Déplacement vers le bas
-
                     abscisseJ1++;
-                    break;
+                    if (abscisseJ1 == abscisseJ2 && ordonneJ1 == ordonneJ2){
+                        System.out.println("Vous ne pouvez pas vous faire du rentre-dedans comme ça");
+                        abscisseJ1--;
+                        ouVeuxTuTeDeplacer = scanDeplacement.next().charAt(0);
+                    }
+                    else {
+                        break;
+                    }
+
                 }
                 else if (ouVeuxTuTeDeplacer == 'd' && ordonneJ1<11){
                     // Déplacement vers la droite
-
                     ordonneJ1++;
-                    break;
+                    if (ordonneJ1 == ordonneJ2 && abscisseJ1 == abscisseJ2){
+                        System.out.println("Vous ne pouvez pas vous faire du rentre-dedans comme ça");
+                        ordonneJ1--;
+                        ouVeuxTuTeDeplacer = scanDeplacement.next().charAt(0);
+                    }
+                    else {
+                        break;
+                    }
                 }
                 else {
                     System.out.println("Vous ne pouvez pas sortir des limites");
@@ -106,11 +131,18 @@ public class Main {
                 if (scanDetruire1.hasNextInt()){
                     place = scanDetruire1.nextInt();
                     while (true){
-
                         if (place<1 || place>110){
                             System.out.println("Vous voyez que c'est entre 1 et 110");
                             place = scanDetruire1.nextInt();
                         }
+                        else if (FonctionDestructCase.placeX.contains(place)){
+                            System.out.println("Cette case à déjà été détruite");
+                            place = scanDetruire1.nextInt();
+                        }
+                        /*else if (FonctionDestructCase.placeX.contains(placeJ1) || FonctionDestructCase.placeX.contains(placeJ2)){
+                            System.out.println("Il y a des joueurs ici");
+                            place = scanDetruire1.nextInt();
+                        }*/
                         else {
                             break;
                         }
@@ -142,27 +174,51 @@ public class Main {
             while (true){
                 if (ouVeuxTuTeDeplacer == 'z' && abscisseJ2>0){
                     // Déplacement vers le haut
-
                     abscisseJ2--;
-                    break;
+                    if (ordonneJ1 == ordonneJ2 && abscisseJ1 == abscisseJ2){
+                        System.out.println("Vous ne pouvez pas vous faire du rentre-dedans comme ça");
+                        abscisseJ2++;
+                        ouVeuxTuTeDeplacer = scanDeplacement.next().charAt(0);
+                    }
+                    else {
+                        break;
+                    }
                 }
                 else if (ouVeuxTuTeDeplacer == 'q' && ordonneJ2>0){
                     // Déplacement vers la gauche
-
                     ordonneJ2--;
-                    break;
+                    if (ordonneJ1 == ordonneJ2 && abscisseJ1 == abscisseJ2){
+                        System.out.println("Vous ne pouvez pas vous faire du rentre-dedans comme ça");
+                        ordonneJ2++;
+                        ouVeuxTuTeDeplacer = scanDeplacement.next().charAt(0);
+                    }
+                    else {
+                        break;
+                    }
                 }
                 else if (ouVeuxTuTeDeplacer == 's' && abscisseJ2<10){
                     // Déplacement vers le bas
-
                     abscisseJ2++;
-                    break;
+                    if (ordonneJ1 == ordonneJ2 && abscisseJ1 == abscisseJ2){
+                        System.out.println("Vous ne pouvez pas vous faire du rentre-dedans comme ça");
+                        abscisseJ2--;
+                        ouVeuxTuTeDeplacer = scanDeplacement.next().charAt(0);
+                    }
+                    else {
+                        break;
+                    }
                 }
                 else if (ouVeuxTuTeDeplacer == 'd' && ordonneJ2<11){
                     // Déplacement vers la droite
-
                     ordonneJ2++;
-                    break;
+                    if (ordonneJ1 == ordonneJ2 && abscisseJ1 == abscisseJ2){
+                        System.out.println("Vous ne pouvez pas vous faire du rentre-dedans comme ça");
+                        ordonneJ2--;
+                        ouVeuxTuTeDeplacer = scanDeplacement.next().charAt(0);
+                    }
+                    else {
+                        break;
+                    }
                 }
                 else {
                     System.out.println("Vous ne pouvez pas sortir des limites");
