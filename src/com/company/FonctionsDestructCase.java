@@ -700,13 +700,4 @@ public class FonctionsDestructCase {
 
     }
 
-    static public void LaCaseEstDejaRempli(int place){
-        Scanner scan = new Scanner(System.in);
-        if (VariablesGlobales.croix.equals(VariablesGlobales.symboleJoueur1) || VariablesGlobales.croix.equals(VariablesGlobales.symboleJoueur2)) {
-        System.out.println("C'est de la destruction de joueur ça nan? Ce n'est pas toléré");
-            place = scan.nextInt();
-        }
-        else {
-        }
-    }
 }

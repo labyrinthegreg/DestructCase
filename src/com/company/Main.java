@@ -56,7 +56,7 @@ public class Main {
                             place = scanDetruire1.nextInt();
                         }
                         else if (FonctionsDestructCase.VariablesGlobales.croix.equals(FonctionsDestructCase.VariablesGlobales.symboleJoueur1) || FonctionsDestructCase.VariablesGlobales.croix.equals(FonctionsDestructCase.VariablesGlobales.symboleJoueur2)) {
-                            System.out.println("C'est de la destruction de joueur ça nan? Ce n'est pas toléré");
+                            System.out.println("Vous ne pouvez pas détruire les joueurs");
                             place = scanDetruire1.nextInt();
                         }
                         else {
