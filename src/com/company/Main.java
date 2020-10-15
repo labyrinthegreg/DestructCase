@@ -4,14 +4,11 @@ import java.util.Scanner;
 
 public class Main {
 
+
     public static void main(String[] args) {
 
         //Déclaration des variables
         int place;
-        // Création du plateau
-        // Déclaration des variables
-        int abscisse = 0;
-        int ordonne = 0;
 
 
         //Menu puis demande des pseudos une fois la demande de commencer la partie
@@ -27,7 +24,7 @@ public class Main {
         FonctionsDestructCase.VariablesGlobales.joueur1 = FonctionsDestructCase.aleaPremierjoueur();
         FonctionsDestructCase.VariablesGlobales.joueur2 = FonctionsDestructCase.VariablesGlobales.pseudoJ2;
         // Faire en sorte que les pseudos soit attribués aux joueurs
-        if (FonctionsDestructCase.VariablesGlobales.joueur1 == FonctionsDestructCase.VariablesGlobales.joueur2) {
+        if (FonctionsDestructCase.VariablesGlobales.joueur1.equals(FonctionsDestructCase.VariablesGlobales.joueur2)) {
             FonctionsDestructCase.VariablesGlobales.joueur2 = FonctionsDestructCase.VariablesGlobales.pseudoJ1;
         }
 
@@ -71,10 +68,14 @@ public class Main {
 
             FonctionsDestructCase.detruireCase(FonctionsDestructCase.VariablesGlobales.plateau, place);
             FonctionsDestructCase.afficherMenuEnPartie();
+            FonctionsDestructCase.verificationPerdant();
             FonctionsDestructCase.remplirCaseDepart();
 
+
             FonctionsDestructCase.deplacerJoueur2();
+            FonctionsDestructCase.verificationPerdant();
             FonctionsDestructCase.remplirCaseDepart();
+
 
             System.out.println("Choisissez la case que vous voulez détruire. (Elles sont numérotés)");
             while (true) { // Vérification que c'est bien un nombre et entre 1 et 110
@@ -88,6 +89,10 @@ public class Main {
                         System.out.println("Cette case à déjà été détruite");
                         place = scanDetruire2.nextInt();
                     }
+                    else if (FonctionsDestructCase.VariablesGlobales.croix.equals(FonctionsDestructCase.VariablesGlobales.symboleJoueur1) || FonctionsDestructCase.VariablesGlobales.croix.equals(FonctionsDestructCase.VariablesGlobales.symboleJoueur2)) {
+                        System.out.println("Vous ne pouvez pas détruire les joueurs");
+                        place = scanDetruire2.nextInt();
+                    }
                     break;
                 }
                 else {
@@ -96,7 +101,9 @@ public class Main {
             }
             FonctionsDestructCase.detruireCase(FonctionsDestructCase.VariablesGlobales.plateau, place);
             FonctionsDestructCase.afficherMenuEnPartie();
+            FonctionsDestructCase.verificationPerdant();
             FonctionsDestructCase.remplirCaseDepart();
+
         }
 
     }
