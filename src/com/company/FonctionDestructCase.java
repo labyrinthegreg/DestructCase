@@ -349,343 +349,118 @@ public class FonctionDestructCase {
         String croix = " X ";
         placeX.add(place);
 
-        // Déclaration des cases
-        switch (place){
-            case 1:
-                plateau [0][0] = croix;
-                break;
-            case 2:
-                plateau [0][1] = croix;
-                break;
-            case 3:
-                plateau [0][2] = croix;
-                break;
-            case 4:
-                plateau [0][3] = croix;
-                break;
-            case 5:
-                plateau [0][4] = croix;
-                break;
-            case 6:
-                plateau [0][5] = croix;
-                break;
-            case 7:
-                plateau [0][6] = croix;
-                break;
-            case 8:
-                plateau [0][7] = croix;
-                break;
-            case 9:
-                plateau [0][8] = croix;
-                break;
-            case 10:
-                plateau [0][9] = croix;
-            break;
-            case 11:
-                plateau [0][10] = croix;
-                break;
-            case 12:
-                plateau [1][0] = croix;
-                break;
-            case 13:
-                plateau [1][1] = croix;
-                break;
-            case 14:
-                plateau [1][2] = croix;
-                break;
-            case 15:
-                plateau [1][3] = croix;
-                break;
-            case 16:
-                plateau [1][4] = croix;
-                break;
-            case 17:
-                plateau [1][5] = croix;
-                break;
-            case 18:
-                plateau [1][6] = croix;
-                break;
-            case 19:
-                plateau [1][7] = croix;
-                break;
-            case 20:
-                plateau [1][8] = croix;
-                break;
-            case 21:
-                plateau [1][9] = croix;
-                break;
-            case 22:
-                plateau [1][10] = croix;
-                break;
-            case 23:
-                plateau [2][0] = croix;
-                break;
-            case 24:
-                plateau [2][1] = croix;
-                break;
-            case 25:
-                plateau [2][2] = croix;
-                break;
-            case 26:
-                plateau [2][3] = croix;
-                break;
-            case 27:
-                plateau [2][4] = croix;
-                break;
-            case 28:
-                plateau [2][5] = croix;
-                break;
-            case 29:
-                plateau [2][6] = croix;
-                break;
-            case 30:
-                plateau [2][7] = croix;
-                break;
-            case 31:
-                plateau [2][8] = croix;
-                break;
-            case 32:
-                plateau [2][9] = croix;
-                break;
-            case 33:
-                plateau [2][10] = croix;
-                break;
-            case 34:
-                plateau [3][0] = croix;
-                break;
-            case 35:
-                plateau [3][1] = croix;
-                break;
-            case 36:
-                plateau [3][2] = croix;
-                break;
-            case 37:
-                plateau [3][3] = croix;
-                break;
-            case 38:
-                plateau [3][4] = croix;
-                break;
-            case 39:
-                plateau [3][5] = croix;
-                break;
-            case 40:
-                plateau [3][6] = croix;
-                break;
-            case 41:
-                plateau [3][7] = croix;
-                break;
-            case 42:
-                plateau [3][8] = croix;
-                break;
-            case 43:
-                plateau [3][9] = croix;
-                break;
-            case 44:
-                plateau [3][10] = croix;
-                break;
-            case 45:
-                plateau [4][0] = croix;
-                break;
-            case 46:
-                plateau [4][1] = croix;
-                break;
-            case 47:
-                plateau [4][2] = croix;
-                break;
-            case 48:
-                plateau [4][3] = croix;
-                break;
-            case 49:
-                plateau [4][4] = croix;
-                break;
-            case 50:
-                plateau [4][5] = croix;
-                break;
-            case 51:
-                plateau [4][6] = croix;
-                break;
-            case 52:
-                plateau [4][7] = croix;
-                break;
-            case 53:
-                plateau [4][8] = croix;
-                break;
-            case 54:
-                plateau [4][9] = croix;
-                break;
-            case 55:
-                plateau [4][10] = croix;
-                break;
-            case 56:
-                plateau [5][0] = croix;
-                break;
-            case 57:
-                plateau [5][1] = croix;
-                break;
-            case 58 :
-                plateau [6][3] = croix;
-                break;
-            case 59:
-                plateau [6][4] = croix;
-                break;
-            case 60:
-                plateau [6][5] = croix;
-                break;
-            case 61:
-                plateau [6][6] = croix;
-                break;
-            case 62:
-                plateau [6][7] = croix;
-                break;
-            case 63:
-                plateau [6][8] = croix;
-                break;
-            case 64:
-                plateau [6][9] = croix;
-                break;
-            case 65:
-                plateau [6][10] = croix;
-                break;
-            case 66:
-                plateau [7][0] = croix;
-                break;
-            case 67:
-                plateau [7][1] = croix;
-                break;
-            case 68:
-                plateau [7][2] = croix;
-                break;
-            case 69:
-                plateau [7][3] = croix;
-                break;
-            case 70:
-                plateau [7][4] = croix;
-                break;
-            case 71:
-                plateau [7][5] = croix;
-                break;
-            case 72:
-                plateau [7][6] = croix;
-                break;
-            case 73:
-                plateau [7][7] = croix;
-                break;
-            case 74:
-                plateau [7][8] = croix;
-                break;
-            case 75:
-                plateau [7][9] = croix;
-                break;
-            case 76:
-                plateau [7][10] = croix;
-                break;
-            case 77:
-                plateau [8][0] = croix;
-                break;
-            case 78:
-                plateau [8][1] = croix;
-                break;
-            case 79:
-                plateau [8][2] = croix;
-                break;
-            case 80:
-                plateau [8][3] = croix;
-                break;
-            case 81:
-                plateau [8][4] = croix;
-                break;
-            case 82:
-                plateau [8][5] = croix;
-                break;
-            case 83:
-                plateau [8][6] = croix;
-                break;
-            case 84:
-                plateau [8][7] = croix;
-                break;
-            case 85:
-                plateau [8][8] = croix;
-                break;
-            case 86:
-                plateau [8][9] = croix;
-                break;
-            case 87:
-                plateau [8][10] = croix;
-                break;
-            case 88:
-                plateau [9][1] = croix;
-                break;
-            case 89:
-                plateau [9][2] = croix;
-                break;
-            case 90:
-                plateau [9][3] = croix;
-                break;
-            case 91:
-                plateau [9][4] = croix;
-                break;
-            case 92:
-                plateau [9][5] = croix;
-                break;
-            case 93:
-                plateau [9][6] = croix;
-                break;
-            case 94:
-                plateau [9][7] = croix;
-                break;
-            case 95:
-                plateau [9][8] = croix;
-                break;
-            case 96:
-                plateau [9][9] = croix;
-                break;
-            case 97:
-                plateau [9][10] = croix;
-                break;
-            case 98:
-                plateau [10][0] = croix;
-                break;
-            case 99:
-                plateau [10][1] = croix;
-                break;
-            case 100:
-                plateau [10][2] = croix;
-                break;
-            case 101:
-                plateau [10][3] = croix;
-                break;
-            case 102:
-                plateau [10][4] = croix;
-                break;
-            case 103:
-                plateau [10][5] = croix;
-                break;
-            case 104:
-                plateau [10][6] = croix;
-                break;
-            case 105:
-                plateau [10][7] = croix;
-                break;
-            case 106:
-                plateau [10][8] = croix;
-                break;
-            case 107:
-                plateau [10][9] = croix;
-                break;
-            case 108:
-                plateau [10][10] = croix;
-                break;
-            case 109:
-                plateau [11][0] = croix;
-                break;
-            case 110:
-                plateau [11][1] = croix;
-                break;
-            case 111:
-                plateau [11][2] = croix;
-                break;
-            default:
-                break;
+        switch (place) {
+            case 1 -> plateau[0][0] = croix;
+            case 2 -> plateau[0][1] = croix;
+            case 3 -> plateau[0][2] = croix;
+            case 4 -> plateau[0][3] = croix;
+            case 5 -> plateau[0][4] = croix;
+            case 6 -> plateau[0][5] = croix;
+            case 7 -> plateau[0][6] = croix;
+            case 8 -> plateau[0][7] = croix;
+            case 9 -> plateau[0][8] = croix;
+            case 10 -> plateau[0][9] = croix;
+            case 11 -> plateau[0][10] = croix;
+            case 12 -> plateau[1][0] = croix;
+            case 13 -> plateau[1][1] = croix;
+            case 14 -> plateau[1][2] = croix;
+            case 15 -> plateau[1][3] = croix;
+            case 16 -> plateau[1][4] = croix;
+            case 17 -> plateau[1][5] = croix;
+            case 18 -> plateau[1][6] = croix;
+            case 19 -> plateau[1][7] = croix;
+            case 20 -> plateau[1][8] = croix;
+            case 21 -> plateau[1][9] = croix;
+            case 22 -> plateau[1][10] = croix;
+            case 23 -> plateau[2][0] = croix;
+            case 24 -> plateau[2][1] = croix;
+            case 25 -> plateau[2][2] = croix;
+            case 26 -> plateau[2][3] = croix;
+            case 27 -> plateau[2][4] = croix;
+            case 28 -> plateau[2][5] = croix;
+            case 29 -> plateau[2][6] = croix;
+            case 30 -> plateau[2][7] = croix;
+            case 31 -> plateau[2][8] = croix;
+            case 32 -> plateau[2][9] = croix;
+            case 33 -> plateau[2][10] = croix;
+            case 34 -> plateau[3][0] = croix;
+            case 35 -> plateau[3][1] = croix;
+            case 36 -> plateau[3][2] = croix;
+            case 37 -> plateau[3][3] = croix;
+            case 38 -> plateau[3][4] = croix;
+            case 39 -> plateau[3][5] = croix;
+            case 40 -> plateau[3][6] = croix;
+            case 41 -> plateau[3][7] = croix;
+            case 42 -> plateau[3][8] = croix;
+            case 43 -> plateau[3][9] = croix;
+            case 44 -> plateau[3][10] = croix;
+            case 45 -> plateau[4][0] = croix;
+            case 46 -> plateau[4][1] = croix;
+            case 47 -> plateau[4][2] = croix;
+            case 48 -> plateau[4][3] = croix;
+            case 49 -> plateau[4][4] = croix;
+            case 50 -> plateau[4][5] = croix;
+            case 51 -> plateau[4][6] = croix;
+            case 52 -> plateau[4][7] = croix;
+            case 53 -> plateau[4][8] = croix;
+            case 54 -> plateau[4][9] = croix;
+            case 55 -> plateau[4][10] = croix;
+            case 56 -> plateau[5][0] = croix;
+            case 57 -> plateau[5][1] = croix;
+            case 58 -> plateau[6][3] = croix;
+            case 59 -> plateau[6][4] = croix;
+            case 60 -> plateau[6][5] = croix;
+            case 61 -> plateau[6][6] = croix;
+            case 62 -> plateau[6][7] = croix;
+            case 63 -> plateau[6][8] = croix;
+            case 64 -> plateau[6][9] = croix;
+            case 65 -> plateau[6][10] = croix;
+            case 66 -> plateau[7][0] = croix;
+            case 67 -> plateau[7][1] = croix;
+            case 68 -> plateau[7][2] = croix;
+            case 69 -> plateau[7][3] = croix;
+            case 70 -> plateau[7][4] = croix;
+            case 71 -> plateau[7][5] = croix;
+            case 72 -> plateau[7][6] = croix;
+            case 73 -> plateau[7][7] = croix;
+            case 74 -> plateau[7][8] = croix;
+            case 75 -> plateau[7][9] = croix;
+            case 76 -> plateau[7][10] = croix;
+            case 77 -> plateau[8][0] = croix;
+            case 78 -> plateau[8][1] = croix;
+            case 79 -> plateau[8][2] = croix;
+            case 80 -> plateau[8][3] = croix;
+            case 81 -> plateau[8][4] = croix;
+            case 82 -> plateau[8][5] = croix;
+            case 83 -> plateau[8][6] = croix;
+            case 84 -> plateau[8][7] = croix;
+            case 85 -> plateau[8][8] = croix;
+            case 86 -> plateau[8][9] = croix;
+            case 87 -> plateau[8][10] = croix;
+            case 88 -> plateau[9][1] = croix;
+            case 89 -> plateau[9][2] = croix;
+            case 90 -> plateau[9][3] = croix;
+            case 91 -> plateau[9][4] = croix;
+            case 92 -> plateau[9][5] = croix;
+            case 93 -> plateau[9][6] = croix;
+            case 94 -> plateau[9][7] = croix;
+            case 95 -> plateau[9][8] = croix;
+            case 96 -> plateau[9][9] = croix;
+            case 97 -> plateau[9][10] = croix;
+            case 98 -> plateau[10][0] = croix;
+            case 99 -> plateau[10][1] = croix;
+            case 100 -> plateau[10][2] = croix;
+            case 101 -> plateau[10][3] = croix;
+            case 102 -> plateau[10][4] = croix;
+            case 103 -> plateau[10][5] = croix;
+            case 104 -> plateau[10][6] = croix;
+            case 105 -> plateau[10][7] = croix;
+            case 106 -> plateau[10][8] = croix;
+            case 107 -> plateau[10][9] = croix;
+            case 108 -> plateau[10][10] = croix;
+            case 109 -> plateau[11][0] = croix;
+            case 110 -> plateau[11][1] = croix;
+            case 111 -> plateau[11][2] = croix;
         }
 
     }
