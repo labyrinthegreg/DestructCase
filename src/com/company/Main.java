@@ -1,6 +1,5 @@
 package com.company;
 
-import javax.management.MBeanRegistration;
 import java.util.Scanner;
 
 public class Main {
@@ -16,30 +15,31 @@ public class Main {
 
 
         //Menu puis demande des pseudos une fois la demande de commencer la partie
-        FonctionDestructCase.afficherMenu();
-        FonctionDestructCase.VariablesGlobales.pseudoJ1 = FonctionDestructCase.demandePseudo1();
-        System.out.println("Joueur1: " + FonctionDestructCase.VariablesGlobales.pseudoJ1);
-        FonctionDestructCase.VariablesGlobales.pseudoJ2 = FonctionDestructCase.demandePseudo2();
-        System.out.println("Joueur2: " + FonctionDestructCase.VariablesGlobales.pseudoJ2);
+        FonctionsDestructCase.afficherMenu();
+        FonctionsDestructCase.VariablesGlobales.pseudoJ1 = FonctionsDestructCase.demandePseudo1();
+        System.out.println("Joueur1: " + FonctionsDestructCase.VariablesGlobales.pseudoJ1);
+        FonctionsDestructCase.VariablesGlobales.pseudoJ2 = FonctionsDestructCase.demandePseudo2();
+        System.out.println("Joueur2: " + FonctionsDestructCase.VariablesGlobales.pseudoJ2);
 
+        // Affichage du plateau
+        FonctionsDestructCase.remplirCaseDepart();
         // choix du premier joueur aléatoirement
-        FonctionDestructCase.VariablesGlobales.joueur1 = FonctionDestructCase.aleaPremierjoueur();
-        FonctionDestructCase.VariablesGlobales.joueur2 = FonctionDestructCase.VariablesGlobales.pseudoJ2;
+        FonctionsDestructCase.VariablesGlobales.joueur1 = FonctionsDestructCase.aleaPremierjoueur();
+        FonctionsDestructCase.VariablesGlobales.joueur2 = FonctionsDestructCase.VariablesGlobales.pseudoJ2;
         // Faire en sorte que les pseudos soit attribués aux joueurs
-        if (FonctionDestructCase.VariablesGlobales.joueur1 == FonctionDestructCase.VariablesGlobales.joueur2) {
-            FonctionDestructCase.VariablesGlobales.joueur2 = FonctionDestructCase.VariablesGlobales.pseudoJ1;
+        if (FonctionsDestructCase.VariablesGlobales.joueur1 == FonctionsDestructCase.VariablesGlobales.joueur2) {
+            FonctionsDestructCase.VariablesGlobales.joueur2 = FonctionsDestructCase.VariablesGlobales.pseudoJ1;
         }
 
-        System.out.println("Le premier à jouer sera " + FonctionDestructCase.VariablesGlobales.joueur1 + " suivi de " + FonctionDestructCase.VariablesGlobales.joueur2);
-        System.out.println(FonctionDestructCase.VariablesGlobales.joueur1 + " tu seras A et " + FonctionDestructCase.VariablesGlobales.joueur2 + " tu seras B");
-        FonctionDestructCase.remplirCaseDepart();
+        System.out.println("Le premier à jouer sera " + FonctionsDestructCase.VariablesGlobales.joueur1 + " suivi de " + FonctionsDestructCase.VariablesGlobales.joueur2);
+        System.out.println(FonctionsDestructCase.VariablesGlobales.joueur1 + " tu seras A et " + FonctionsDestructCase.VariablesGlobales.joueur2 + " tu seras B");
+
 
         //Mouvement des joueurs
         while (true) {
 
-            FonctionDestructCase.deplacerJoueur1();
-            FonctionDestructCase.remplirCaseDepart();
-
+            FonctionsDestructCase.deplacerJoueur1();
+            FonctionsDestructCase.remplirCaseDepart();
 
             //Demande de la case à détruire
             System.out.println("Choisissez la case que vous voulez détruire. (Elles sont numérotés)");
@@ -51,8 +51,12 @@ public class Main {
                         if (place < 1 || place > 110) {
                             System.out.println("Vous voyez que c'est entre 1 et 110");
                             place = scanDetruire1.nextInt();
-                        } else if (FonctionDestructCase.placeX.contains(place)) {
+                        } else if (FonctionsDestructCase.placeX.contains(place)) {
                             System.out.println("Cette case à déjà été détruite");
+                            place = scanDetruire1.nextInt();
+                        }
+                        else if (FonctionsDestructCase.VariablesGlobales.croix.equals(FonctionsDestructCase.VariablesGlobales.symboleJoueur1) || FonctionsDestructCase.VariablesGlobales.croix.equals(FonctionsDestructCase.VariablesGlobales.symboleJoueur2)) {
+                            System.out.println("C'est de la destruction de joueur ça nan? Ce n'est pas toléré");
                             place = scanDetruire1.nextInt();
                         }
                         else {
@@ -65,12 +69,12 @@ public class Main {
                 }
             }
 
-            FonctionDestructCase.detruireCase(FonctionDestructCase.VariablesGlobales.plateau, place);
-            FonctionDestructCase.afficherMenuEnPartie();
-            FonctionDestructCase.remplirCaseDepart();
+            FonctionsDestructCase.detruireCase(FonctionsDestructCase.VariablesGlobales.plateau, place);
+            FonctionsDestructCase.afficherMenuEnPartie();
+            FonctionsDestructCase.remplirCaseDepart();
 
-            FonctionDestructCase.deplacerJoueur2();
-            FonctionDestructCase.remplirCaseDepart();
+            FonctionsDestructCase.deplacerJoueur2();
+            FonctionsDestructCase.remplirCaseDepart();
 
             System.out.println("Choisissez la case que vous voulez détruire. (Elles sont numérotés)");
             while (true) { // Vérification que c'est bien un nombre et entre 1 et 110
@@ -85,9 +89,9 @@ public class Main {
                     System.out.println("Vous ne voyez que les numéros que vous pouvez taper ");
                 }
             }
-            FonctionDestructCase.detruireCase(FonctionDestructCase.VariablesGlobales.plateau, place);
-            FonctionDestructCase.afficherMenuEnPartie();
-            FonctionDestructCase.remplirCaseDepart();
+            FonctionsDestructCase.detruireCase(FonctionsDestructCase.VariablesGlobales.plateau, place);
+            FonctionsDestructCase.afficherMenuEnPartie();
+            FonctionsDestructCase.remplirCaseDepart();
         }
 
     }
