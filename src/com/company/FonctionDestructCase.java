@@ -349,6 +349,7 @@ public class FonctionDestructCase {
         String croix = " X ";
         placeX.add(place);
 
+        // Déclaration des cases
         switch (place){
             case 1:
                 plateau [0][0] = croix;
