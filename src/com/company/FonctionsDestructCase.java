@@ -21,6 +21,7 @@ public class FonctionsDestructCase {
         public static char ouVeuxTuTeDeplacer;
         public static String croix = "❎";
         public static String vainqueur;
+
     }
 
     public static ArrayList<Integer> placeX = new ArrayList<Integer>();
@@ -744,11 +745,11 @@ public class FonctionsDestructCase {
      */
 
     public static void verificationPerdant() {
-        if (FonctionsDestructCase.VariablesGlobales.plateau[FonctionsDestructCase.VariablesGlobales.abscisseJ1--][FonctionsDestructCase.VariablesGlobales.ordonneJ1].equals(FonctionsDestructCase.VariablesGlobales.croix) && FonctionsDestructCase.VariablesGlobales.plateau[FonctionsDestructCase.VariablesGlobales.abscisseJ1=VariablesGlobales.abscisseJ1+2][FonctionsDestructCase.VariablesGlobales.ordonneJ1].equals(FonctionsDestructCase.VariablesGlobales.croix) && FonctionsDestructCase.VariablesGlobales.plateau[FonctionsDestructCase.VariablesGlobales.abscisseJ1][FonctionsDestructCase.VariablesGlobales.ordonneJ1--].equals(FonctionsDestructCase.VariablesGlobales.croix) && FonctionsDestructCase.VariablesGlobales.plateau[FonctionsDestructCase.VariablesGlobales.abscisseJ1][FonctionsDestructCase.VariablesGlobales.ordonneJ1=VariablesGlobales.ordonneJ1+2].equals(FonctionsDestructCase.VariablesGlobales.croix)) {
+        if (FonctionsDestructCase.VariablesGlobales.plateau[FonctionsDestructCase.VariablesGlobales.abscisseJ1--][FonctionsDestructCase.VariablesGlobales.ordonneJ1].equals(FonctionsDestructCase.VariablesGlobales.croix) && FonctionsDestructCase.VariablesGlobales.plateau[FonctionsDestructCase.VariablesGlobales.abscisseJ1=VariablesGlobales.abscisseJ1+2][FonctionsDestructCase.VariablesGlobales.ordonneJ1].equals(FonctionsDestructCase.VariablesGlobales.croix) && FonctionsDestructCase.VariablesGlobales.plateau[FonctionsDestructCase.VariablesGlobales.abscisseJ1--][FonctionsDestructCase.VariablesGlobales.ordonneJ1--].equals(FonctionsDestructCase.VariablesGlobales.croix) && FonctionsDestructCase.VariablesGlobales.plateau[FonctionsDestructCase.VariablesGlobales.abscisseJ1][FonctionsDestructCase.VariablesGlobales.ordonneJ1=VariablesGlobales.ordonneJ1+2].equals(FonctionsDestructCase.VariablesGlobales.croix)) {
             System.out.println("Il semblerait que " + FonctionsDestructCase.VariablesGlobales.pseudoJ1 + " sois coincé. \n Donc " + FonctionsDestructCase.VariablesGlobales.pseudoJ2 + " est le grand vainqueur");
             FonctionsDestructCase.VariablesGlobales.vainqueur = FonctionsDestructCase.VariablesGlobales.pseudoJ2;
             afficherMenu();
-        } else if (FonctionsDestructCase.VariablesGlobales.plateau[FonctionsDestructCase.VariablesGlobales.abscisseJ2--][FonctionsDestructCase.VariablesGlobales.ordonneJ2].equals(FonctionsDestructCase.VariablesGlobales.croix) && FonctionsDestructCase.VariablesGlobales.plateau[FonctionsDestructCase.VariablesGlobales.abscisseJ2=VariablesGlobales.abscisseJ2+2][FonctionsDestructCase.VariablesGlobales.ordonneJ2].equals(FonctionsDestructCase.VariablesGlobales.croix) && FonctionsDestructCase.VariablesGlobales.plateau[FonctionsDestructCase.VariablesGlobales.abscisseJ2][FonctionsDestructCase.VariablesGlobales.ordonneJ2--].equals(FonctionsDestructCase.VariablesGlobales.croix) && FonctionsDestructCase.VariablesGlobales.plateau[FonctionsDestructCase.VariablesGlobales.abscisseJ2][FonctionsDestructCase.VariablesGlobales.ordonneJ2=VariablesGlobales.ordonneJ2+2].equals(FonctionsDestructCase.VariablesGlobales.croix)) {
+        } else if (FonctionsDestructCase.VariablesGlobales.plateau[FonctionsDestructCase.VariablesGlobales.abscisseJ2--][FonctionsDestructCase.VariablesGlobales.ordonneJ2].equals(FonctionsDestructCase.VariablesGlobales.croix) && FonctionsDestructCase.VariablesGlobales.plateau[FonctionsDestructCase.VariablesGlobales.abscisseJ2=VariablesGlobales.abscisseJ2+2][FonctionsDestructCase.VariablesGlobales.ordonneJ2].equals(FonctionsDestructCase.VariablesGlobales.croix) && FonctionsDestructCase.VariablesGlobales.plateau[FonctionsDestructCase.VariablesGlobales.abscisseJ2--][FonctionsDestructCase.VariablesGlobales.ordonneJ2--].equals(FonctionsDestructCase.VariablesGlobales.croix) && FonctionsDestructCase.VariablesGlobales.plateau[FonctionsDestructCase.VariablesGlobales.abscisseJ2][FonctionsDestructCase.VariablesGlobales.ordonneJ2=VariablesGlobales.ordonneJ2+2].equals(FonctionsDestructCase.VariablesGlobales.croix)) {
             System.out.println("Il semblerait que " + FonctionsDestructCase.VariablesGlobales.pseudoJ2 + " sois coincé. \n Donc " + FonctionsDestructCase.VariablesGlobales.pseudoJ1 + " est le grand vainqueur");
             FonctionsDestructCase.VariablesGlobales.vainqueur = FonctionsDestructCase.VariablesGlobales.pseudoJ1;
             afficherMenu();
@@ -757,4 +758,6 @@ public class FonctionsDestructCase {
             VariablesGlobales.abscisseJ2++;
         }
     }
+    
+
 }

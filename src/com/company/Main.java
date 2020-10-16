@@ -68,12 +68,10 @@ public class Main {
 
             FonctionsDestructCase.detruireCase(FonctionsDestructCase.VariablesGlobales.plateau, place);
             FonctionsDestructCase.afficherMenuEnPartie();
-            FonctionsDestructCase.verificationPerdant();
             FonctionsDestructCase.remplirCaseDepart();
 
 
             FonctionsDestructCase.deplacerJoueur2();
-            FonctionsDestructCase.verificationPerdant();
             FonctionsDestructCase.remplirCaseDepart();
 
 
@@ -101,7 +99,6 @@ public class Main {
             }
             FonctionsDestructCase.detruireCase(FonctionsDestructCase.VariablesGlobales.plateau, place);
             FonctionsDestructCase.afficherMenuEnPartie();
-            FonctionsDestructCase.verificationPerdant();
             FonctionsDestructCase.remplirCaseDepart();
 
         }
